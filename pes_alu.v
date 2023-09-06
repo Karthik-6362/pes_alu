@@ -1,5 +1,5 @@
 //Verilog module for an ALU
-module iiitb_alu(
+module pes_alu(
 clk,
 A,
 B,
