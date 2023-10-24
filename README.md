@@ -42,4 +42,78 @@ This ALU is capable of doing the following operations:
 
 # Synthesis and GLS :- 
 
+**Synthesis:** Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates. 
+It is done using YOSYS by following commands.
+
+## Verifying the design brfore GLS
+
+### Changing directory to the location of the design and testbench files.
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+### Using iverilog to compile and simulate Verilog source code.
+```
+iverilog pes_alu.v pes_alu_tb.v -o pes_alu.out
+./pes_alu.out 
+```
+### Using gtkwave to get the output waveforms. 
+```
+gtkwave pes_alu_out.vcd
+```
+![gtk before gls](https://github.com/Karthik-6362/pes_alu/assets/137412032/0b0146a9-cc86-4c66-898f-1a3d61579fe1)
+![gtkwave ](https://github.com/Karthik-6362/pes_alu/assets/137412032/a0d355d8-3ca6-4a70-885c-2ace10524f61)
+
+
+## Using YOSYS to do synthesis
+
+#### Invoking yosys :- 
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+```
+
+
+#### Reading liberty files :- 
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+#### Reading the design.v file :- 
+```
+read_verilog pes_alu.v
+```
+![Invoke yosys, read liberty files and verilog files](https://github.com/Karthik-6362/pes_alu/assets/137412032/670991e8-ab41-45bb-9496-b380d693e815)
+
+#### Synthesizing the design for the top module pes_alu
+```
+synth -top pes_alu
+```
+![run_synthesis](https://github.com/Karthik-6362/pes_alu/assets/137412032/e9f4fc44-4322-48d2-806a-d51e0e87fc56)
+
+####  Mapping to mycells.lib and d-flops :- 
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![diff lib map](https://github.com/Karthik-6362/pes_alu/assets/137412032/a29b2296-9a14-4162-8c60-3e93774afb07)
+
+
+#### Getting the netlist file
+```
+write_verilog -noattr pes_alu_netlist.v
+show
+exit  // To exit yosys
+```
+![write verilog](https://github.com/Karthik-6362/pes_alu/assets/137412032/43126b79-fc22-4a4e-932c-d0f38f1805d8)
+
+Netlist :- 
+
+
+
+
+
+
+
+
+
+
 
