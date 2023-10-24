@@ -1,3 +1,4 @@
+`timescale 1ns/1ps 
 module pes_alu_tb;
 
 // Inputs
@@ -10,7 +11,7 @@ reg clk;
 wire [7:0] R;
 
 // Instantiate the Unit Under Test (UUT)
-iiitb_alu uut ( 
+pes_alu uut ( 
 .clk(clk),
 .A(A), 
 .B(B), 
@@ -20,8 +21,8 @@ iiitb_alu uut (
     
 initial begin
 
-$dumpfile ("iiitb_alu_out.vcd"); 
-$dumpvars(0,iiitb_alu_tb);
+    $dumpfile ("pes_alu_out.vcd"); 
+    $dumpvars(0,pes_alu_tb);
 
 // Initialize Inputs
 
@@ -45,4 +46,6 @@ op = 6; #100;
 op = 7; #100;
 end
 
+initial 
+    #1000 $finish;
 endmodule
