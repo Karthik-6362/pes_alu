@@ -119,9 +119,11 @@ gtkwave pes_alu_out.vcd
 ```
 ![gtk after gls](https://github.com/Karthik-6362/pes_alu/assets/137412032/7a57e5ec-13e8-4239-bce4-1c56b0dbdadd)
 
+#### Before GLS :- 
+![gtkwave ](https://github.com/Karthik-6362/pes_alu/assets/137412032/6427cf5b-1c27-454e-89cf-41ee4a0baec5)
 
-
-
+#### GLS :- 
+![after gls](https://github.com/Karthik-6362/pes_alu/assets/137412032/cd0c5770-41a1-45f7-a567-aa0d914709f5)
 
 
 
