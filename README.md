@@ -48,7 +48,7 @@ This ALU is capable of doing the following operations:
 **Synthesis:** Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates. 
 It is done using YOSYS by following commands.
 
-## Verifying the design brfore GLS
+## Verifying the design before GLS
 
 ### Changing directory to the location of the design and testbench files.
 ```
@@ -122,7 +122,7 @@ gtkwave pes_alu_out.vcd
 #### Before GLS :- 
 ![gtkwave ](https://github.com/Karthik-6362/pes_alu/assets/137412032/6427cf5b-1c27-454e-89cf-41ee4a0baec5)
 
-#### GLS :- 
+#### After GLS :- 
 ![after gls](https://github.com/Karthik-6362/pes_alu/assets/137412032/cd0c5770-41a1-45f7-a567-aa0d914709f5)
 
 
