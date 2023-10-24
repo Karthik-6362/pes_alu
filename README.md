@@ -106,6 +106,37 @@ exit  // To exit yosys
 ![write verilog](https://github.com/Karthik-6362/pes_alu/assets/137412032/43126b79-fc22-4a4e-932c-d0f38f1805d8)
 
 Netlist :- 
+![netlist](https://github.com/Karthik-6362/pes_alu/assets/137412032/28255552-9f0f-4078-891d-fa8ccfe7ad2b)
+
+#### GATE LEVEL SIMULATION(GLS) :- 
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_alu_netlist.v pes_alu_tb.v
+./a.out
+gtkwave pes_alu_out.vcd
+```
+![gtk after gls](https://github.com/Karthik-6362/pes_alu/assets/137412032/7a57e5ec-13e8-4239-bce4-1c56b0dbdadd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
