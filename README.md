@@ -40,6 +40,9 @@ This ALU is capable of doing the following operations:
 * Logical calculations
 * Arithmatic Calculations
 
+# RTL Schematic using Quartus:- 
+![schematic](https://github.com/Karthik-6362/pes_alu/assets/137412032/708f94d4-7c7f-434d-97fe-8cb3b3bdcb16)
+
 # Synthesis and GLS :- 
 
 **Synthesis:** Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates. 
