@@ -183,11 +183,13 @@ OpenLANE design stages
 
 
 # Tools used for physical Design
-# Python Installation
+<details>
+</details>
+## Python Installation
 ```
 $ sudo apt install -y build-essential python3 python3-venv python3-pip
 ```
-# Docker Installation
+## Docker Installation
 ```
 $ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
 
@@ -217,7 +219,7 @@ $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING>
 
 $ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)
 ```
-# OpenLane Installation
+## OpenLane Installation
 ```
 $ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 
@@ -227,7 +229,7 @@ $ make
 
 $ make test
 ```
-# Magic Installation
+## Magic Installation
 For Magic to be installed and work properly the following softwares have to be installed first:
 ## Installing csh
 ``` $ sudo apt-get install csh ```
@@ -263,6 +265,9 @@ $ make install
 ## ngspice Installation
 ``` $ sudo apt-get install ngspice ```
 
+
+
+</details>
 
 
 
