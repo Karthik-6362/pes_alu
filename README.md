@@ -182,8 +182,9 @@ OpenLANE design stages
     * CVC - Performs Circuit Validity Checks
 
 
-# Tools used for physical Design
+
 <details>
+<summary># Tools used for physical Design</summary>
 
 ## Python Installation
 ```
