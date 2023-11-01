@@ -184,7 +184,7 @@ OpenLANE design stages
 
 # Tools used for physical Design
 <details>
-</details>
+
 ## Python Installation
 ```
 $ sudo apt install -y build-essential python3 python3-venv python3-pip
