@@ -128,9 +128,140 @@ gtkwave pes_alu_out.vcd
 
 
 
+# PHYSICAL DESIGN :- 
+
+OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLANE flow comprises a variety of tools such as Yosys, ABC, OpenSTA, Fault, OpenROAD app, Netgen and Magic which are used to harden chips and macros, i.e. generate final GDSII from the design RTL. The primary goal of OpenLANE is to produce clean GDSII with no human intervention. OpenLANE has been tuned to function for the Google-Skywater130 Opensource Process Design Kit.
+
+**SoC Design & OpenLANE**
+
+Components of opensource digital ASIC design
+The design of digital Application Specific Integrated Circuit (ASIC) requires three enablers or elements - Resistor Transistor Logic Intellectual Property (RTL IPs), Electronic Design Automation (EDA) Tools and Process Design Kit (PDK) data.
+
+![soc and openlane](https://github.com/Karthik-6362/pes_pd/assets/137412032/fabbcc1d-4321-449b-ace6-90db2ccaaa8a)
 
 
+ * Opensource RTL Designs: github, librecores, opencores
+ * Opensource EDA tools: QFlow, OpenROAD, OpenLANE
+ * Opensource PDK data: Google Skywater130 PDK
 
+The ASIC flow objective is to convert RTL design to GDSII format used for final layout. The flow is essentially a software also known as automated PnR (Place & route).
+
+**Opensource EDA tools**
+OpenLANE utilises a variety of opensource tools in the execution of the ASIC flow:
+
+![image](https://user-images.githubusercontent.com/110485513/187844211-8c82e3ce-4549-4d72-9bd1-02322351fb51.png)
+
+OpenLANE design stages
+1. Synthesis
+     * yosys - Performs RTL synthesis
+     * abc - Performs technology mapping
+     * OpenSTA - Performs static timing analysis on the resulting netlist to generate timing reports
+2. Floorplan and PDN
+     * init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+     * ioplacer - Places the macro input and output ports
+     * pdn - Generates the power distribution network
+     * tapcell - Inserts welltap and decap cells in the floorplan
+3. Placement
+    * RePLace - Performs global placement
+    * Resizer - Performs optional optimizations on the design
+    * OpenDP - Perfroms detailed placement to legalize the globally placed components
+4. CTS
+    * TritonCTS - Synthesizes the clock distribution network (the clock tree)
+5. Routing
+    * FastRoute - Performs global routing to generate a guide file for the detailed router
+    * CU-GR - Another option for performing global routing.
+    * TritonRoute - Performs detailed routing
+    * SPEF-Extractor - Performs SPEF extraction
+6. GDSII Generation
+    * Magic - Streams out the final GDSII layout file from the routed def
+    * Klayout - Streams out the final GDSII layout file from the routed def as a back-up
+7. Checks
+    * Magic - Performs DRC Checks & Antenna Checks
+    * Klayout - Performs DRC Checks
+    * Netgen - Performs LVS Checks
+    * CVC - Performs Circuit Validity Checks
+
+
+# Tools used for physical Design
+# Python Installation
+```
+$ sudo apt install -y build-essential python3 python3-venv python3-pip
+```
+# Docker Installation
+```
+$ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
+
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+    
+$ sudo mkdir -p /etc/apt/keyrings
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+$ sudo apt-get update
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+$ apt-cache madison docker-ce (copy the version string you want to install)
+
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin (paste the version string copies in place of <VERSION_STRING>)
+
+$ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)
+```
+# OpenLane Installation
+```
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+
+$ cd OpenLane/
+
+$ make
+
+$ make test
+```
+# Magic Installation
+For Magic to be installed and work properly the following softwares have to be installed first:
+## Installing csh
+``` $ sudo apt-get install csh ```
+## Installing x11/xorg
+``` $ sudo apt-get install x11
+
+$ sudo apt-get install xorg
+
+$ sudo apt-get install xorg openbox
+``` 
+## Installing GCC
+``` $ sudo apt-get install gcc ```
+## Installing build-essential
+``` $ sudo apt-get install build-essential ```
+## Installing OpenGL
+``` $ sudo apt-get install freeglut3-dev ```
+## Installing tcl/tk
+``` $ sudo apt-get install tcl-dev tk-dev ```
+## Installing magic
+After all the softwares are installed, run the following commands for installing magic:
+``` $ git clone https://github.com/RTimothyEdwards/magic
+
+$ cd magic
+
+$ ./configure
+
+$ make
+
+$ make install
+```
+## Klayout Installation
+``` $ sudo apt-get install klayout ```
+## ngspice Installation
+``` $ sudo apt-get install ngspice ```
 
 
 
