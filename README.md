@@ -352,7 +352,7 @@ endmodule
 - Invoke floorplan using command `run_floorplan`]
 ![run_floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/f2531c31-6cce-477c-90fd-83cf3889686d)
 - - view floorplan in Magic
-- `cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign magic -T sky130A.tech sky130_inv.mag &`
+- magic -T /home/aniruddhan/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_alu.def &
 ![floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/596b6c50-4696-47b6-a34d-76ba2591c6a7)
 
 
