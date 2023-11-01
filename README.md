@@ -183,8 +183,7 @@ OpenLANE design stages
 
 
 
-<details>
-<summary> Tools used for physical Design</summary>
+# Tools used for physical Design :-
 
 ## Python Installation
 ```
@@ -268,7 +267,7 @@ $ make install
 
 
 
-</details>
+
 
 
 
