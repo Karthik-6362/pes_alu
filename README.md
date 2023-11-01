@@ -267,15 +267,102 @@ $ make install
 
 
 
+# OpenLANE Flow :-
+
+## Creating a design folder through OpenLane
+- To create a design folder with a default config.json file
+- ``cd``
+- ``cd OpenLane``
+- ``make mount``
+- ``./flow.tcl -design pes_alu -init_design_config``
+
+- In a new tab,
+- ``cd ~/OpenLane/openlane/pes_alu``
+- ``mkdir src``
+- ``cd src``
+- ``gedit pes_alu.v``
+
+![files](https://github.com/Karthik-6362/pes_alu/assets/137412032/0018cbc7-0cc1-431e-81be-d6e7e53d05c6)
+
+```
+//Verilog module for an ALU
+module pes_alu(
+clk,
+A,
+B,
+op,
+R   );
+    
+//inputs,outputs and internal variables declared here
+input clk;
+input [7:0] A,B;
+input [2:0] op;
+output [7:0] R;
+wire [7:0] Reg1,Reg2;
+reg [7:0] Reg3;
+    
+//Assign A and B to internal variables for doing operations
+assign Reg1 = A;
+assign Reg2 = B;
+//Assign the output 
+assign R = Reg3;
+
+//Always block with inputs in the sensitivity list.
+always @(posedge clk)
+begin
+case (op)
+0 : Reg3 = Reg1 + Reg2;  //addition
+1 : Reg3 = Reg1 - Reg2; //subtraction
+2 : Reg3 = ~Reg1;  //NOT gate
+3 : Reg3 = ~(Reg1 & Reg2); //NAND gate 
+4 : Reg3 = ~(Reg1 | Reg2); //NOR gate               
+5 : Reg3 = Reg1 & Reg2;  //AND gate
+6 : Reg3 = Reg1 | Reg2;  //OR gate    
+7 : Reg3 = Reg1 ^ Reg2; //XOR gate  
+endcase 
+end
+    
+endmodule
+
+
+```
+
+
+## Start Interactive Mode:
+- `./flow.tcl -interactive`
+![openlane starting](https://github.com/Karthik-6362/pes_alu/assets/137412032/ee593336-ffbf-4347-83f8-eb472e35a62a)
+
+
+## To prep the design type:
+- `prep -design pes_alu `
+![prep design](https://github.com/Karthik-6362/pes_alu/assets/137412032/5054b9a2-ca80-4721-8efd-0666730b2d34)
 
 
 
+## Synthesis 
+- Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
+- `run_synthesis`
+![run synthesis](https://github.com/Karthik-6362/pes_alu/assets/137412032/ad41880c-857b-4d6d-863b-51c862d41401)
+![ABC results](https://github.com/Karthik-6362/pes_alu/assets/137412032/05b35a42-0ad6-43b3-9450-0b3dff56f846)
+![run synthesis op](https://github.com/Karthik-6362/pes_alu/assets/137412032/0f19e91c-28a3-4993-a0d3-4df255504f40)
 
 
+## Floorplan
+- The floorplanning stage involves defining the physical boundaries and locations of different functional blocks within the chip's die area.
+- Invoke floorplan using command `run_floorplan`]
+![run_floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/f2531c31-6cce-477c-90fd-83cf3889686d)
+- - view floorplan in Magic
+- `cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign magic -T sky130A.tech sky130_inv.mag &`
+![floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/596b6c50-4696-47b6-a34d-76ba2591c6a7)
 
 
+## Placement
+- Placement is the process of determining the precise locations of individual standard cells within the defined floorplan.
+- Invoke placement using command `run_placement`
 
-
+![run_placement](https://github.com/Karthik-6362/pes_alu/assets/137412032/f02ff75b-7a99-4a0e-b7ee-6c6e74e956a4)
+![run_placement op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/00597a70-2623-4750-94c3-4d7e476f8e26)
+![run_placement op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/5d3e1e27-94d5-4fda-bc92-d50bbc4fe366)
 
 
 
