@@ -184,7 +184,7 @@ OpenLANE design stages
 
 
 <details>
-<summary># Tools used for physical Design</summary>
+<summary> Tools used for physical Design</summary>
 
 ## Python Installation
 ```
