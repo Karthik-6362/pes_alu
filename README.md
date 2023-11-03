@@ -260,10 +260,6 @@ $ make
 
 $ make install
 ```
-## Klayout Installation
-``` $ sudo apt-get install klayout ```
-## ngspice Installation
-``` $ sudo apt-get install ngspice ```
 
 
 
@@ -343,7 +339,9 @@ endmodule
 - Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
 - `run_synthesis`
 ![run synthesis](https://github.com/Karthik-6362/pes_alu/assets/137412032/ad41880c-857b-4d6d-863b-51c862d41401)
+ABC results :- 
 ![ABC results](https://github.com/Karthik-6362/pes_alu/assets/137412032/05b35a42-0ad6-43b3-9450-0b3dff56f846)
+Statistics :- 
 ![run synthesis op](https://github.com/Karthik-6362/pes_alu/assets/137412032/0f19e91c-28a3-4993-a0d3-4df255504f40)
 
 
@@ -351,18 +349,76 @@ endmodule
 - The floorplanning stage involves defining the physical boundaries and locations of different functional blocks within the chip's die area.
 - Invoke floorplan using command `run_floorplan`]
 ![run_floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/f2531c31-6cce-477c-90fd-83cf3889686d)
-- - view floorplan in Magic
+- view floorplan in Magic
 - `magic -T /home/desktop/work/tools/openLane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_alu.def &`
-![floorplan](https://github.com/Karthik-6362/pes_alu/assets/137412032/596b6c50-4696-47b6-a34d-76ba2591c6a7)
+![floorplan cmds](https://github.com/Karthik-6362/pes_alu/assets/137412032/5495bb0a-e99e-4fb7-809e-5b8d45a4632e)
+
+tkcon:- 
+![floorplan specifications](https://github.com/Karthik-6362/pes_alu/assets/137412032/0be18f2d-1f69-4feb-aacf-1e76a26b8348)
+
+Output :- 
+![floorplan op](https://github.com/Karthik-6362/pes_alu/assets/137412032/58d90acf-9ac7-4270-a03e-9a44554d930c)
+
 
 
 ## Placement
 - Placement is the process of determining the precise locations of individual standard cells within the defined floorplan.
 - Invoke placement using command `run_placement`
 
-![run_placement](https://github.com/Karthik-6362/pes_alu/assets/137412032/f02ff75b-7a99-4a0e-b7ee-6c6e74e956a4)
-![run_placement op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/00597a70-2623-4750-94c3-4d7e476f8e26)
-![run_placement op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/5d3e1e27-94d5-4fda-bc92-d50bbc4fe366)
+  To view in magic :-
+```
+cd to resluts/placement 
+magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_alu.def &
+```
+![run_placement](https://github.com/Karthik-6362/pes_alu/assets/137412032/8d39ef7f-4f6d-4f21-9782-0414501cf064)
+
+Design Stats:-
+![run_placement op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/90e53445-b45a-4938-8dc0-d4c48c698a33)
+
+tkcon:- 
+![run_placement op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/fac99071-fecf-4385-bdbc-1d637e83a80c)
+
+
+## CTS 
+- To run CTS we use the command ``` run_cts ```
+![cts cmds](https://github.com/Karthik-6362/pes_alu/assets/137412032/4674ee9e-b29f-4e88-8487-e22d6dfa6833)
+
+To view in magic :-
+```
+cd to resluts/cts
+magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_alu.def &
+```
+
+![ctsop](https://github.com/Karthik-6362/pes_alu/assets/137412032/964c4749-70d9-488e-833b-606bd39faebf)
+![ctsop1](https://github.com/Karthik-6362/pes_alu/assets/137412032/8292123d-3b26-48a8-acb7-42ae6ae2fe1b)
+![ctsop2](https://github.com/Karthik-6362/pes_alu/assets/137412032/4d3528f0-3eeb-4417-bd72-e86e573f4f2d)
+
+tkcon :- 
+![cts tkcon](https://github.com/Karthik-6362/pes_alu/assets/137412032/2f600553-5099-47eb-b1a5-11bc02711996)
+
+## Routing 
+
+- Command ```run_routing```
+
+To view in magic :-
+```
+cd to resluts/routing 
+magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_alu.def &
+```
+
+![routing cmds](https://github.com/Karthik-6362/pes_alu/assets/137412032/a58d91ce-a067-4494-910f-5f5190dfd253)
+![routing op](https://github.com/Karthik-6362/pes_alu/assets/137412032/7c9c373b-c932-42e0-9165-e8b35573c49c)
+![routing op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/6b50c515-cd41-4ace-a1ed-d5de5f38986b)
+![routing op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/b59436af-5fce-4b3a-9e33-1f1dc33e1d94)
+
+
+
+
+
+
+
+
+
 
 
 
