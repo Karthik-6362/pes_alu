@@ -339,9 +339,12 @@ endmodule
 - Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
 - `run_synthesis`
 ![run synthesis](https://github.com/Karthik-6362/pes_alu/assets/137412032/ad41880c-857b-4d6d-863b-51c862d41401)
-ABC results :- 
+ABC results :-
+
 ![ABC results](https://github.com/Karthik-6362/pes_alu/assets/137412032/05b35a42-0ad6-43b3-9450-0b3dff56f846)
+
 Statistics :- 
+
 ![run synthesis op](https://github.com/Karthik-6362/pes_alu/assets/137412032/0f19e91c-28a3-4993-a0d3-4df255504f40)
 
 
@@ -354,9 +357,11 @@ Statistics :-
 ![floorplan cmds](https://github.com/Karthik-6362/pes_alu/assets/137412032/5495bb0a-e99e-4fb7-809e-5b8d45a4632e)
 
 tkcon:- 
+
 ![floorplan specifications](https://github.com/Karthik-6362/pes_alu/assets/137412032/0be18f2d-1f69-4feb-aacf-1e76a26b8348)
 
 Output :- 
+
 ![floorplan op](https://github.com/Karthik-6362/pes_alu/assets/137412032/58d90acf-9ac7-4270-a03e-9a44554d930c)
 
 
@@ -373,9 +378,11 @@ magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magi
 ![run_placement](https://github.com/Karthik-6362/pes_alu/assets/137412032/8d39ef7f-4f6d-4f21-9782-0414501cf064)
 
 Design Stats:-
+
 ![run_placement op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/90e53445-b45a-4938-8dc0-d4c48c698a33)
 
 tkcon:- 
+
 ![run_placement op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/fac99071-fecf-4385-bdbc-1d637e83a80c)
 
 
@@ -394,6 +401,7 @@ magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magi
 ![ctsop2](https://github.com/Karthik-6362/pes_alu/assets/137412032/4d3528f0-3eeb-4417-bd72-e86e573f4f2d)
 
 tkcon :- 
+
 ![cts tkcon](https://github.com/Karthik-6362/pes_alu/assets/137412032/2f600553-5099-47eb-b1a5-11bc02711996)
 
 ## Routing 
