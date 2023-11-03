@@ -324,7 +324,12 @@ endmodule
 ```
 
 
-## Start Interactive Mode:
+## Start Interactive Mode or using Automated mode :
+![Screenshot from 2023-11-02 19-34-09](https://github.com/Karthik-6362/pes_alu/assets/137412032/820bae18-ab58-4db6-8433-1613b6956ea1)
+![Screenshot from 2023-11-02 19-34-30](https://github.com/Karthik-6362/pes_alu/assets/137412032/8191b9e8-fce3-413c-89e7-9316caa2a8be)
+
+
+
 - `./flow.tcl -interactive`
 ![openlane starting](https://github.com/Karthik-6362/pes_alu/assets/137412032/ee593336-ffbf-4347-83f8-eb472e35a62a)
 
