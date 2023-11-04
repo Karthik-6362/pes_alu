@@ -3074,6 +3074,62 @@ worst slack 2.01
 
 ```
 
+### Area Report
+
+```
+
+61. Printing statistics.
+
+=== pes_alu ===
+
+   Number of wires:                133
+   Number of wire bits:            156
+   Number of public wires:           5
+   Number of public wire bits:      28
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                136
+     sky130_fd_sc_hd__a211o_2        2
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2         6
+     sky130_fd_sc_hd__a21oi_2        7
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2         6
+     sky130_fd_sc_hd__a32o_2         1
+     sky130_fd_sc_hd__and2_2         3
+     sky130_fd_sc_hd__and3_2         2
+     sky130_fd_sc_hd__and3b_2        2
+     sky130_fd_sc_hd__buf_1          7
+     sky130_fd_sc_hd__dfxtp_2        8
+     sky130_fd_sc_hd__inv_2          3
+     sky130_fd_sc_hd__mux2_2         3
+     sky130_fd_sc_hd__nand2_2        8
+     sky130_fd_sc_hd__nand3_2        2
+     sky130_fd_sc_hd__nor2_2         7
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__o2111a_2       4
+     sky130_fd_sc_hd__o21a_2         7
+     sky130_fd_sc_hd__o21ai_2        5
+     sky130_fd_sc_hd__o22a_2         7
+     sky130_fd_sc_hd__o2bb2a_2       3
+     sky130_fd_sc_hd__o31a_2         4
+     sky130_fd_sc_hd__or2_2          8
+     sky130_fd_sc_hd__or2b_2         3
+     sky130_fd_sc_hd__or3_2          6
+     sky130_fd_sc_hd__or3b_2         3
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2        8
+     sky130_fd_sc_hd__xor2_2         4
+
+   Chip area for module '\pes_alu': 1323.769600
+
+
+```
+
+
 
 ### Power Statistics
 ![Screenshot from 2023-11-04 13-04-27](https://github.com/Karthik-6362/pes_alu/assets/137412032/2898d39c-5bc3-4956-8b14-876ca35fa119)
