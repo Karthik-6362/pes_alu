@@ -424,6 +424,8 @@ magic -T /home/Desktop/OpenLane_working_die/openlane/pdks/sky130A/libs.tech/magi
 ![routing op1](https://github.com/Karthik-6362/pes_alu/assets/137412032/6b50c515-cd41-4ace-a1ed-d5de5f38986b)
 ![routing op2](https://github.com/Karthik-6362/pes_alu/assets/137412032/b59436af-5fce-4b3a-9e33-1f1dc33e1d94)
 
+
+
 # Report 
 
 ## CTS
@@ -3058,6 +3060,20 @@ Fanout     Cap    Slew   Delay    Time   Description
 worst slack corner Typical: 2.0919
 
 ```
+### Worst Slack
+```
+===========================================================================
+report_worst_slack -max (Setup)
+============================================================================
+worst slack 4.94
+
+===========================================================================
+report_worst_slack -min (Hold)
+============================================================================
+worst slack 2.01
+
+```
+
 
 ### Power Statistics
 ![Screenshot from 2023-11-04 13-04-27](https://github.com/Karthik-6362/pes_alu/assets/137412032/2898d39c-5bc3-4956-8b14-876ca35fa119)
